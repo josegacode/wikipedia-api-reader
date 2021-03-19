@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wikipedia reader</title>
+    <!-- Bootstrap 5 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Font awesome most recent version script -->
+    <script
+      src="https://kit.fontawesome.com/28f2c7891d.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- The old friend AJAX from JQuery for make the requests :) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </head>
+  <body>
+    <br />
+    <section>
+      <header class="container">
+        <h1 class="text-center">Wikipedia reader!</h1>
+        <br />
+        <input
+          class="form-control"
+          type="text"
+          name="search-request-field"
+          id="search-request-field"
+          placeholder="Type something to search"
+        />
+        <br />
+        <br />
+        <button
+          class="form-control btn btn-primary"
+          onclick="searchOnWikipedia()"
+        >
+          Search
+        </button>
+        <br />
+      </header>
+      <hr class="container" />
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="row">
+          <br />
+          <div class="col">
+            <h2>Request for search</h2>
+            <textarea
+              class="form-control"
+              type="text"
+              id="search-request"
+              disabled="true"
+            ></textarea>
+          </div>
+
+          <br />
+          <div class="col">
+            <h2>Response for search</h2>
+            <textarea
+              class="form-control"
+              type="text"
+              id="search-request-value"
+              disabled="true"
+            ></textarea>
+          </div>
+        </div>
+      </div>
+<!-- 
+      <br />
+      <br />
+
+      <div class="container">
+        <div class="row">
+          <br />
+          <div class="col">
+            <h2>Requets for get HTML content</h2>
+            <textarea
+              class="form-control"
+              type="text"
+              id="request-html"
+              disabled="true"
+            ></textarea>
+          </div>
+
+          <br />
+          <div class="col">
+            <h2>Response for get HTML content</h2>
+            <textarea
+              class="form-control"
+              type="text"
+              id="response-html-value"
+              disabled="true"
+            ></textarea>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <section>
+      <hr class="container" />
+      <br />
+      <div class="container" id="render-container"></div>
+    </section>
+
+    <!-- Script that performs the request to Wikipedia API -->
+    <script src="consumer.js"></script>
+  </body>
+</html>
